@@ -1,4 +1,5 @@
-﻿using GeometricModeling.enums;
+﻿using System;
+using GeometricModeling.enums;
 using GeometricModeling.libs;
 
 namespace LR2
@@ -16,13 +17,43 @@ namespace LR2
             Glut.glutInitWindowSize(300, 300);
             Glut.glutInitWindowPosition(0, 0);
             Glut.GlutDisplayFunc(Display3);
-            Glut.GlutKeyboardFunc(Func);
+            Glut.GlutKeyboardFunc(ClickKeyboardKeys);
+            Glut.GlutSpecialFunc(ClickSpecialKeys);
             Glut.glutMainLoop();
         }
 
-        private static void Func(byte key, int x, int y)
+        private static void ClickSpecialKeys(int key, int x, int y)
         {
-            Calculator.CalculatePoints(Points, Matrices.GetRotationMatrix(0.1f));
+            var matrix = new float[0,0];
+            
+            switch (key)
+            {
+                case 100: matrix = Matrices.GetDilatationMatrix(0.9f, 1.0f); break;
+                case 102: matrix = Matrices.GetDilatationMatrix(1.1f, 1.0f); break;
+                case 103: matrix = Matrices.GetDilatationMatrix(1.0f, 0.9f); break;
+                case 101: matrix = Matrices.GetDilatationMatrix(1.0f, 1.1f); break;
+            }
+            
+            Calculator.CalculatePoints(Points, matrix);
+            Glut.glutPostRedisplay();
+        }
+
+        private static void ClickKeyboardKeys(byte key, int x, int y)
+        {
+            var matrix = new float[0,0];
+            
+            switch (key)
+            {
+                case 113: matrix = Matrices.GetRotationMatrix(0.1f); break;
+                case 101: matrix = Matrices.GetRotationMatrix(-0.1f); break;
+                case 119: matrix = Matrices.GetTranslationMatrix(0.0f, 1.0f); break;
+                case 115: matrix = Matrices.GetTranslationMatrix(0.0f, -1.0f); break;
+                case 100: matrix = Matrices.GetTranslationMatrix(1.0f, 0.0f); break;
+                case 97:  matrix = Matrices.GetTranslationMatrix(-1.0f, 0.0f); break;
+                case 114: matrix = Matrices.GetMirrorReflectionMatrix(); break;
+            }
+            
+            Calculator.CalculatePoints(Points, matrix);
             Glut.glutPostRedisplay();
         }
 
