@@ -30,7 +30,7 @@ namespace GeometricModeling
                         i -= 1;
                     }
 
-                    action.Invoke(x, y, i);
+                    action(x, y, i);
                 }
             }
         }
