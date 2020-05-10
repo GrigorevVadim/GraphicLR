@@ -7,7 +7,7 @@
     <ProjectGuid>{4672BE25-FA45-4806-824A-219FE838B39C}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>GeometricModeling</RootNamespace>
-    <AssemblyName>GeometricModelingLR1</AssemblyName>
+    <AssemblyName>LR1</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
