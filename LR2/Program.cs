@@ -32,6 +32,7 @@ namespace LR2
                 case 102: matrix = Matrices.GetDilatationMatrix(1.1f, 1.0f); break;
                 case 103: matrix = Matrices.GetDilatationMatrix(1.0f, 0.9f); break;
                 case 101: matrix = Matrices.GetDilatationMatrix(1.0f, 1.1f); break;
+                default: return;
             }
             
             Calculator.CalculatePoints(Points, matrix);
@@ -51,6 +52,7 @@ namespace LR2
                 case 100: matrix = Matrices.GetTranslationMatrix(1.0f, 0.0f); break;
                 case 97:  matrix = Matrices.GetTranslationMatrix(-1.0f, 0.0f); break;
                 case 114: matrix = Matrices.GetMirrorReflectionMatrix(); break;
+                default: return;
             }
             
             Calculator.CalculatePoints(Points, matrix);
