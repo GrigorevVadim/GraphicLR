@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 using System.Security;
 using System.Text;
 
-namespace GeometricModeling.libs
+namespace LR3.libs
 {
     public static class Glut
     {

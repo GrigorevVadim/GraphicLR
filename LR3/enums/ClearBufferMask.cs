@@ -1,6 +1,6 @@
 using System;
 
-namespace GeometricModeling.enums
+namespace LR3.enums
 {
     [Flags]
     public enum ClearBufferMask

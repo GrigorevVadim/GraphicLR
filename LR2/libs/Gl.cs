@@ -1,8 +1,8 @@
 using System;
 using System.Runtime.InteropServices;
-using GeometricModeling.enums;
+using LR2.enums;
 
-namespace GeometricModeling.libs
+namespace LR2.libs
 {
     public static class Gl
     {

@@ -1,4 +1,4 @@
-namespace GeometricModeling.enums
+namespace LR3.enums
 {
     public enum GlPrimitiveType
     {

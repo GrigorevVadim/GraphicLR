@@ -1,6 +1,5 @@
-﻿using System;
-using GeometricModeling.enums;
-using GeometricModeling.libs;
+﻿using LR2.enums;
+using LR2.libs;
 
 namespace LR2
 {
@@ -16,7 +15,7 @@ namespace LR2
             Glut.glutCreateWindow("2d graphic");
             Glut.glutInitWindowSize(300, 300);
             Glut.glutInitWindowPosition(0, 0);
-            Glut.GlutDisplayFunc(Display3);
+            Glut.GlutDisplayFunc(Display);
             Glut.GlutKeyboardFunc(ClickKeyboardKeys);
             Glut.GlutSpecialFunc(ClickSpecialKeys);
             Glut.glutMainLoop();
@@ -59,7 +58,7 @@ namespace LR2
             Glut.glutPostRedisplay();
         }
 
-        private static void Display3()
+        private static void Display()
         {
             Gl.glClear(ClearBufferMask.ColorBufferBit);
             Gl.glColor3f(1.0f, 0.0f, 0.0f);

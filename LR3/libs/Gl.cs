@@ -1,8 +1,8 @@
 using System;
 using System.Runtime.InteropServices;
-using GeometricModeling.enums;
+using LR3.enums;
 
-namespace GeometricModeling.libs
+namespace LR3.libs
 {
     public static class Gl
     {
@@ -34,5 +34,14 @@ namespace GeometricModeling.libs
         
         [DllImport(Lib, ExactSpelling = true)]
         internal static extern void glPointSize(Single size);
+        
+        [DllImport(Lib, ExactSpelling = true)]
+        internal static extern void glPolygonMode(MaterialFace face, PolygonMode mode);
+        
+        [DllImport(Lib, ExactSpelling = true)]
+        internal static extern void glEnable(EnableCap cap);
+        
+        [DllImport(Lib, ExactSpelling = true)]
+        internal static extern void glDisable(EnableCap cap);
     }
 }

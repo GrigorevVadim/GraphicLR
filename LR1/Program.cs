@@ -11,11 +11,11 @@ namespace GeometricModeling
             Glut.glutCreateWindow("Julia");
             Glut.glutInitWindowSize(300, 300);
             Glut.glutInitWindowPosition(0, 0);
-            Glut.GlutDisplayFunc(Display3);
+            Glut.GlutDisplayFunc(Display);
             Glut.glutMainLoop();
         }
 
-        private static void Display3()
+        private static void Display()
         {
             Gl.glClear(ClearBufferMask.ColorBufferBit);
             Gl.glPointSize(1.0f);
