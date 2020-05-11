@@ -1,4 +1,4 @@
-namespace LR3
+namespace LR3.Figures
 {
     public class Side
     {

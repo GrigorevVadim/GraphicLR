@@ -1,4 +1,5 @@
 ﻿using LR3.enums;
+using LR3.Figures;
 using LR3.libs;
 
 namespace LR3
@@ -24,49 +25,31 @@ namespace LR3
 
         private static void ClickKeyboardKeys(byte key, int x, int y)
         {
+            Axis axis;
+            float fi;
+            
             switch (key)
             {
-                case 113: cube.CalculateRotation(Axis.Z, 0.1f); break;
-                case 101: cube.CalculateRotation(Axis.Z, -0.1f); break;
-                case 119: cube.CalculateRotation(Axis.Y, 0.1f); break;
-                case 115: cube.CalculateRotation(Axis.Y, -0.1f); break;
-                case 100: cube.CalculateRotation(Axis.X, 0.1f); break;
-                case 97:  cube.CalculateRotation(Axis.X, -0.1f); break;
+                case 100: axis = Axis.X; fi = 0.1f;  break;
+                case 97:  axis = Axis.X; fi = -0.1f; break;
+                case 119: axis = Axis.Y; fi = 0.1f;  break;
+                case 115: axis = Axis.Y; fi = -0.1f; break;
+                case 113: axis = Axis.Z; fi = 0.1f;  break;
+                case 101: axis = Axis.Z; fi = -0.1f; break;
                 default: return;
             }
             
+            cube.CalculateRotation(axis, fi);
             Glut.glutPostRedisplay();
         }
 
         private static void Display()
         {
-            var yOffset = -0.25f;
             Gl.glClear(ClearBufferMask.DepthBufferBit|ClearBufferMask.ColorBufferBit);
             Gl.glEnable(EnableCap.DepthTest);
             
-            Gl.glPolygonMode(MaterialFace.FrontAndBack, PolygonMode.Line);
-            foreach (var pyramidSide in pyramid.Sides)
-            {
-                Gl.glColor3f(pyramidSide.Color[0], pyramidSide.Color[1], pyramidSide.Color[2]);
-                Gl.glBegin(pyramid.PrimitiveType);
-                foreach (var vertex in pyramidSide.Vertices)
-                {
-                    Gl.glVertex3f(vertex[0], vertex[1], vertex[2]);
-                }
-                Gl.glEnd();
-            }
-
-            Gl.glPolygonMode(MaterialFace.FrontAndBack, PolygonMode.Fill);
-            foreach (var cubeSide in cube.Sides)
-            {
-                Gl.glColor3f(cubeSide.Color[0], cubeSide.Color[1], cubeSide.Color[2]);
-                Gl.glBegin(cube.PrimitiveType);
-                foreach (var vertex in cubeSide.Vertices)
-                {
-                    Gl.glVertex3f(vertex[0], vertex[1] + yOffset, vertex[2]);
-                }
-                Gl.glEnd();
-            }
+            pyramid.Display();
+            cube.Display();
             
             Gl.glDisable(EnableCap.DepthTest);
             Gl.glFlush();

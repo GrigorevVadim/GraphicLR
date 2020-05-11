@@ -1,16 +1,13 @@
 using LR3.enums;
 
-namespace LR3
+namespace LR3.Figures
 {
-    public class Pyramid
+    public class Pyramid : Figure
     {
-        public float[][] FigureVertices;
-        public Side[] Sides;
-        public GlPrimitiveType PrimitiveType;
-
         public Pyramid()
         {
-            PrimitiveType = GlPrimitiveType.GlPolygon;
+            OffsetY = 0.0f;
+            Mode = PolygonMode.Line;
             var color = new[] {1.0f, 1.0f, 1.0f};
 
             FigureVertices = new[]

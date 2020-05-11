@@ -1,18 +1,14 @@
-using System;
 using LR3.enums;
 
-namespace LR3
+namespace LR3.Figures
 {
-    public class Cube
+    public class Cube : Figure
     {
-        public float[][] FigureVertices;
-        public Side[] Sides;
-        public GlPrimitiveType PrimitiveType;
-
         public Cube()
         {
+            OffsetY = -0.25f;
+            Mode = PolygonMode.Fill;
             const float dimen = 0.3f;
-            PrimitiveType = GlPrimitiveType.GlPolygon;
 
             FigureVertices = new[]
             {
@@ -95,21 +91,6 @@ namespace LR3
                     }
                 }
             };
-        }
-
-        public void CalculateRotation(Axis axis, float fi)
-        {
-            var d1 = axis == Axis.X ? 1 : 0;
-            var d2 = axis == Axis.Z ? 1 : 2;
-            
-            for (var i = 0; i < FigureVertices.Length; i++)
-            {
-                var val1 = FigureVertices[i][d1];
-                var val2 = FigureVertices[i][d2];
-
-                FigureVertices[i][d1] = val1 * (float) Math.Cos(fi) - val2 * (float) Math.Sin(fi);
-                FigureVertices[i][d2] = val1 * (float) Math.Sin(fi) + val2 * (float) Math.Cos(fi);
-            }
         }
     }
 }
