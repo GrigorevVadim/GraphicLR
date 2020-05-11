@@ -16,9 +16,9 @@ namespace LR3
             FigureVertices = new[]
             {
                 new[] {0.0f, 0.9f, 0.0f},
-                new[] {-0.9f, -0.9f, 0.9f},
-                new[] {0.0f, -0.7f, -0.9f},
-                new[] {0.9f, -0.9f, 0.9f}
+                new[] {-0.9f, -0.9f, -0.9f},
+                new[] {0.0f, -0.7f, 0.9f},
+                new[] {0.9f, -0.9f, -0.9f}
             };
 
             Sides = new[]

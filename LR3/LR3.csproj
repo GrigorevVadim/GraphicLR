@@ -39,6 +39,7 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Cube.cs" />
+        <Compile Include="enums\Axis.cs" />
         <Compile Include="enums\ClearBufferMask.cs" />
         <Compile Include="enums\EnableCap.cs" />
         <Compile Include="enums\GlPrimitiveType.cs" />
