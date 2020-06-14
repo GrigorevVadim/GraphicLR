@@ -1,4 +1,5 @@
-﻿using LR3.enums;
+﻿using System;
+using LR3.enums;
 using LR3.Figures;
 using LR3.libs;
 
@@ -11,6 +12,14 @@ namespace LR3
         
         private static void Main()
         {
+            Console.WriteLine("Для применения поворота используются следующие клавиши:\n" +
+                              "- \"w\", \"s\" - вокруг оси X;\n" +
+                              "- \"a\", \"d\" - вокруг оси Y;\n" +
+                              "- \"q\", \"e\" - вокруг оси Z.\n" +
+                              "Следует удостовериться что ввод на английском языке.\n" +
+                              "Для запуска нажмите любой символ на клавиатуре.");
+            Console.ReadKey();
+            
             pyramid = new Pyramid();
             cube = new Cube();
             

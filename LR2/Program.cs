@@ -1,4 +1,5 @@
-﻿using LR2.enums;
+﻿using System;
+using LR2.enums;
 using LR2.libs;
 
 namespace LR2
@@ -9,6 +10,15 @@ namespace LR2
         
         private static void Main()
         {
+            Console.WriteLine("Для применения афинных преобразований используются следующие клавиши:\n" +
+                              "- \"q\", \"e\" - для поворота;\n" +
+                              "- \"w\", \"s\", \"a\", \"d\" - для переноса;\n" +
+                              "- \"r\" - для отражения;\n" +
+                              "- стрелки - для масштабирования.\n" +
+                              "Следует удостовериться что ввод на английском языке.\n" +
+                              "Для запуска нажмите любой символ на клавиатуре.");
+            Console.ReadKey();
+            
             Points = SourceData.GetSourcePoints();
             
             Glut.GlutInit();
