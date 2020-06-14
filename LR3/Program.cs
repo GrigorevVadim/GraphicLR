@@ -15,7 +15,7 @@ namespace LR3
             cube = new Cube();
             
             Glut.GlutInit();
-            Glut.glutCreateWindow("3d graphic");
+            Glut.glutCreateWindow("GeometricModelingLR3");
             Glut.glutInitWindowSize(300, 300);
             Glut.glutInitWindowPosition(0, 0);
             Glut.GlutDisplayFunc(Display);

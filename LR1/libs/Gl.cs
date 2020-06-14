@@ -9,9 +9,6 @@ namespace GeometricModeling.libs
         private const string Lib = "opengl32.dll";
 
         [DllImport(Lib, ExactSpelling = true)]
-        internal static extern void glClearColor(Single red, Single green, Single blue, Single alpha);
-
-        [DllImport(Lib, ExactSpelling = true)]
         internal static extern void glClear(ClearBufferMask mask);
 
         [DllImport(Lib)]
@@ -25,9 +22,6 @@ namespace GeometricModeling.libs
         
         [DllImport(Lib)]
         public static extern void glColor3f(float red, float green, float blue);
-        
-        [DllImport(Lib)]
-        public static extern void glVertex2f(float x, float y);
         
         [DllImport(Lib)]
         public static extern void glVertex3f(float x, float y, float z);

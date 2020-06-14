@@ -12,7 +12,7 @@ namespace LR2
             Points = SourceData.GetSourcePoints();
             
             Glut.GlutInit();
-            Glut.glutCreateWindow("2d graphic");
+            Glut.glutCreateWindow("GeometricModelingLR2");
             Glut.glutInitWindowSize(300, 300);
             Glut.glutInitWindowPosition(0, 0);
             Glut.GlutDisplayFunc(Display);

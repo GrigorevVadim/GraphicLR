@@ -10,21 +10,9 @@ namespace GeometricModeling.libs
         private const string Lib = "freeglut.dll";
 
         private static DisplayCallback _displayCallback;
-        private static KeyboardCallback _keyboardCallback;
-        private static SpecialCallback _specialCallback;
 
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate void DisplayCallback();
-
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        public delegate void KeyboardCallback(byte key, int x, int y);
-
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        public delegate void SpecialCallback(int key, int x, int y);
-
-        [SuppressUnmanagedCodeSecurity]
-        [DllImport(Lib)]
-        private static extern void glutKeyboardFunc(KeyboardCallback func);
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport(Lib)]
@@ -50,30 +38,10 @@ namespace GeometricModeling.libs
         [DllImport(Lib)]
         public static extern void glutMainLoop();
 
-        [SuppressUnmanagedCodeSecurity]
-        [DllImport(Lib)]
-        public static extern void glutPostRedisplay();
-
-        [SuppressUnmanagedCodeSecurity]
-        [DllImport(Lib)]
-        private static extern void glutSpecialFunc(SpecialCallback func);
-
-        public static void GlutKeyboardFunc([In] KeyboardCallback func)
-        {
-            _keyboardCallback = func;
-            glutKeyboardFunc(_keyboardCallback);
-        }
-
         public static void GlutDisplayFunc([In] DisplayCallback func)
         {
             _displayCallback = func;
             glutDisplayFunc(_displayCallback);
-        }
-
-        public static void GlutSpecialFunc([In] SpecialCallback func)
-        {
-            _specialCallback = func;
-            glutSpecialFunc(_specialCallback);
         }
 
         public static void GlutInit()

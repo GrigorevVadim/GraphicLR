@@ -8,7 +8,7 @@ namespace GeometricModeling
         private static void Main()
         {
             Glut.GlutInit();
-            Glut.glutCreateWindow("Julia");
+            Glut.glutCreateWindow("GeometricModelingLR1");
             Glut.glutInitWindowSize(300, 300);
             Glut.glutInitWindowPosition(0, 0);
             Glut.GlutDisplayFunc(Display);
