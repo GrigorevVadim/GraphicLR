@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using LR3.enums;
 using LR3.Figures;
 using LR3.libs;
@@ -12,6 +13,7 @@ namespace LR3
         
         private static void Main()
         {
+            Console.OutputEncoding = Encoding.UTF8;
             Console.WriteLine("Для применения поворота используются следующие клавиши:\n" +
                               "- \"w\", \"s\" - вокруг оси X;\n" +
                               "- \"a\", \"d\" - вокруг оси Y;\n" +

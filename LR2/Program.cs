@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using LR2.enums;
 using LR2.libs;
 
@@ -10,6 +11,7 @@ namespace LR2
         
         private static void Main()
         {
+            Console.OutputEncoding = Encoding.UTF8;
             Console.WriteLine("Для применения афинных преобразований используются следующие клавиши:\n" +
                               "- \"q\", \"e\" - для поворота;\n" +
                               "- \"w\", \"s\", \"a\", \"d\" - для переноса;\n" +
