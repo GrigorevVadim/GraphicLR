@@ -6,7 +6,7 @@ namespace GeometricModeling
     {
         public static void Draw(Action<double, double, int> action)
         {
-            const int maxiter = 255;
+            const int maxIter = 255;
             const double cX = 0.36;
             const double cY = 0.36;
 
@@ -16,7 +16,7 @@ namespace GeometricModeling
                 {
                     var zx = x;
                     var zy = y;
-                    var i = maxiter;
+                    var i = maxIter;
                     while (zx * zx + zy * zy < 4 && i > 1)
                     {
                         var tmp = zx * zx - zy * zy + cX;
