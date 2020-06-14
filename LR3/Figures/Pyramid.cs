@@ -13,9 +13,11 @@ namespace LR3.Figures
             FigureVertices = new[]
             {
                 new[] {0.0f, 0.9f, 0.0f},
-                new[] {-0.9f, -0.6f, 0.9f},
-                new[] {0.0f, -0.9f, -0.9f},
-                new[] {0.9f, -0.6f, 0.9f}
+                new[] {-0.4f, -0.9f, -0.9f},
+                new[] {0.4f, -0.9f, -0.9f},
+                new[] {0.9f, -0.7f, -0.3f},
+                new[] {0.0f, -0.6f, 0.9f},
+                new[] {-0.9f, -0.7f, -0.3f}
             };
 
             Sides = new[]
@@ -36,7 +38,7 @@ namespace LR3.Figures
                     Vertices = new[]
                     {
                         FigureVertices[0],
-                        FigureVertices[1],
+                        FigureVertices[2],
                         FigureVertices[3]
                     }
                 },
@@ -46,8 +48,8 @@ namespace LR3.Figures
                     Vertices = new[]
                     {
                         FigureVertices[0],
-                        FigureVertices[2],
-                        FigureVertices[3]
+                        FigureVertices[3],
+                        FigureVertices[4]
                     }
                 },
                 new Side
@@ -55,9 +57,19 @@ namespace LR3.Figures
                     Color = color,
                     Vertices = new[]
                     {
-                        FigureVertices[1],
-                        FigureVertices[2],
-                        FigureVertices[3]
+                        FigureVertices[0],
+                        FigureVertices[4],
+                        FigureVertices[5]
+                    }
+                },
+                new Side
+                {
+                    Color = color,
+                    Vertices = new[]
+                    {
+                        FigureVertices[0],
+                        FigureVertices[5],
+                        FigureVertices[1]
                     }
                 }
             };
