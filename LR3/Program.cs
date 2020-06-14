@@ -30,10 +30,10 @@ namespace LR3
             
             switch (key)
             {
-                case 100: axis = Axis.X; fi = 0.1f;  break;
-                case 97:  axis = Axis.X; fi = -0.1f; break;
-                case 119: axis = Axis.Y; fi = 0.1f;  break;
-                case 115: axis = Axis.Y; fi = -0.1f; break;
+                case 119: axis = Axis.X; fi = 0.1f;  break;
+                case 115: axis = Axis.X; fi = -0.1f; break;
+                case 100: axis = Axis.Y; fi = 0.1f;  break;
+                case 97:  axis = Axis.Y; fi = -0.1f; break;
                 case 113: axis = Axis.Z; fi = 0.1f;  break;
                 case 101: axis = Axis.Z; fi = -0.1f; break;
                 default: return;
