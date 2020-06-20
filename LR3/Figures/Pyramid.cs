@@ -22,56 +22,11 @@ namespace LR3.Figures
 
             Sides = new[]
             {
-                new Side
-                {
-                    Color = color,
-                    Vertices = new[]
-                    {
-                        FigureVertices[0],
-                        FigureVertices[1],
-                        FigureVertices[2]
-                    }
-                },
-                new Side
-                {
-                    Color = color,
-                    Vertices = new[]
-                    {
-                        FigureVertices[0],
-                        FigureVertices[2],
-                        FigureVertices[3]
-                    }
-                },
-                new Side
-                {
-                    Color = color,
-                    Vertices = new[]
-                    {
-                        FigureVertices[0],
-                        FigureVertices[3],
-                        FigureVertices[4]
-                    }
-                },
-                new Side
-                {
-                    Color = color,
-                    Vertices = new[]
-                    {
-                        FigureVertices[0],
-                        FigureVertices[4],
-                        FigureVertices[5]
-                    }
-                },
-                new Side
-                {
-                    Color = color,
-                    Vertices = new[]
-                    {
-                        FigureVertices[0],
-                        FigureVertices[5],
-                        FigureVertices[1]
-                    }
-                }
+                new Side(FigureVertices, new[] { 0, 1, 2 }, color),
+                new Side(FigureVertices, new[] { 0, 2, 3 }, color),
+                new Side(FigureVertices, new[] { 0, 3, 4 }, color),
+                new Side(FigureVertices, new[] { 0, 4, 5 }, color),
+                new Side(FigureVertices, new[] { 0, 5, 1 }, color)
             };
         }
     }

@@ -24,72 +24,12 @@ namespace LR3.Figures
 
             Sides = new[]
             {
-                new Side
-                {
-                    Color = new[] {1.0f, 0.0f, 0.0f},
-                    Vertices = new[]
-                    {
-                        FigureVertices[1],
-                        FigureVertices[0],
-                        FigureVertices[2],
-                        FigureVertices[3]
-                    }
-                },
-                new Side
-                {
-                    Color = new[] {1.0f, 1.0f, 0.0f},
-                    Vertices = new[]
-                    {
-                        FigureVertices[5],
-                        FigureVertices[4],
-                        FigureVertices[6],
-                        FigureVertices[7]
-                    }
-                },
-                new Side
-                {
-                    Color = new[] {0.0f, 1.0f, 0.0f},
-                    Vertices = new[]
-                    {
-                        FigureVertices[0],
-                        FigureVertices[1],
-                        FigureVertices[7],
-                        FigureVertices[6]
-                    }
-                },
-                new Side
-                {
-                    Color = new[] {0.0f, 1.0f, 1.0f},
-                    Vertices = new[]
-                    {
-                        FigureVertices[2],
-                        FigureVertices[3],
-                        FigureVertices[5],
-                        FigureVertices[4]
-                    }
-                },
-                new Side
-                {
-                    Color = new[] {0.0f, 0.0f, 1.0f},
-                    Vertices = new[]
-                    {
-                        FigureVertices[0],
-                        FigureVertices[2],
-                        FigureVertices[4],
-                        FigureVertices[6]
-                    }
-                },
-                new Side
-                {
-                    Color = new[] {1.0f, 0.0f, 1.0f},
-                    Vertices = new[]
-                    {
-                        FigureVertices[1],
-                        FigureVertices[3],
-                        FigureVertices[5],
-                        FigureVertices[7]
-                    }
-                }
+                new Side(FigureVertices, new[] { 1, 0, 2, 3 }, new[] { 1.0f, 0.0f, 0.0f }),
+                new Side(FigureVertices, new[] { 5, 4, 6, 7 }, new[] { 1.0f, 1.0f, 0.0f }),
+                new Side(FigureVertices, new[] { 0, 1, 7, 6 }, new[] { 0.0f, 1.0f, 0.0f }),
+                new Side(FigureVertices, new[] { 2, 3, 5, 4 }, new[] { 0.0f, 1.0f, 1.0f }),
+                new Side(FigureVertices, new[] { 0, 2, 4, 6 }, new[] { 0.0f, 0.0f, 1.0f }),
+                new Side(FigureVertices, new[] { 1, 3, 5, 7 }, new[] { 1.0f, 0.0f, 1.0f })
             };
         }
     }
