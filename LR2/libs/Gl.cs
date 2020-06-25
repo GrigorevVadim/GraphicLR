@@ -1,3 +1,4 @@
+using System;
 using System.Runtime.InteropServices;
 using LR2.enums;
 
@@ -24,5 +25,8 @@ namespace LR2.libs
         
         [DllImport(Lib)]
         public static extern void glVertex3f(float x, float y, float z);
+
+        [DllImport(Lib, ExactSpelling = true)]
+        internal static extern void glPointSize(Single size);
     }
 }

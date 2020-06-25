@@ -24,9 +24,9 @@ namespace LR2
             Points = SourceData.GetSourcePoints();
             
             Glut.GlutInit();
+            Glut.glutInitWindowSize(700, 700);
             Glut.glutCreateWindow("GeometricModelingLR2");
-            Glut.glutInitWindowSize(300, 300);
-            Glut.glutInitWindowPosition(0, 0);
+            Glut.glutInitWindowPosition(100, 100);
             Glut.GlutDisplayFunc(Display);
             Glut.GlutKeyboardFunc(ClickKeyboardKeys);
             Glut.GlutSpecialFunc(ClickSpecialKeys);
@@ -73,12 +73,37 @@ namespace LR2
         private static void Display()
         {
             Gl.glClear(ClearBufferMask.ColorBufferBit);
+            DrawAxis();
             Gl.glColor3f(1.0f, 0.0f, 0.0f);
             Gl.glBegin(GlPrimitiveType.GlLineLoop);
             foreach (var point in Points) 
                 Gl.glVertex3f(point[0] * 0.1f, point[1] * 0.1f, 0f);
             Gl.glEnd();
             Gl.glFlush();
+        }
+
+        private static void DrawAxis()
+        {
+            Gl.glColor3f(1.0f, 1.0f, 1.0f);
+            Gl.glBegin(GlPrimitiveType.GlLines);
+            Gl.glVertex3f(-1.0f, 0.0f, 0f);
+            Gl.glVertex3f(1.0f, 0.0f, 0f);
+            Gl.glVertex3f(0.0f, -1.0f, 0f);
+            Gl.glVertex3f(0.0f, 1.0f, 0f);
+            Gl.glEnd();
+
+            Gl.glPointSize(2.0f);
+            Gl.glColor3f(0.0f, 0.0f, 0.0f);
+            Gl.glBegin(GlPrimitiveType.GlPoins);
+            for (float i = -1.0f; i <= 1.0f; i += 0.1f)
+            {
+                Gl.glVertex3f(i, 0.0f, 0f);
+            }
+            for (float i = -1.0f; i <= 1.0f; i += 0.1f)
+            {
+                Gl.glVertex3f(0.0f, i, 0f);
+            }
+            Gl.glEnd();
         }
     }
 }
